@@ -1,0 +1,27 @@
+<Window xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:CalorieCounter.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Class="CalorieCounter.Views.EditProductWindow"
+    x:DataType="vm:EditProductViewModel"
+    Width="350" Height="340" Title="Редактировать продукт" WindowStartupLocation="CenterOwner"
+    Background="#23262F">
+    <StackPanel Margin="24" Spacing="14">
+        <TextBlock Text="Редактировать продукт" FontWeight="Bold" FontSize="18" Foreground="#FFF"
+            HorizontalAlignment="Center" />
+        <TextBox Watermark="Название" Text="{Binding Name}" Background="#181A20" Foreground="#FFF" />
+        <TextBox Watermark="Калории" Text="{Binding Calories}" Background="#181A20"
+            Foreground="#FFF" />
+        <TextBox Watermark="Белки" Text="{Binding Protein}" Background="#181A20" Foreground="#FFF" />
+        <TextBox Watermark="Жиры" Text="{Binding Fat}" Background="#181A20" Foreground="#FFF" />
+        <TextBox Watermark="Углеводы" Text="{Binding Carbs}" Background="#181A20" Foreground="#FFF" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="16"
+            Margin="0,12,0,0">
+            <Button Content="Сохранить" Width="100" IsDefault="True" Command="{Binding SaveCommand}"
+                Background="#4F8EF7" Foreground="#FFF" />
+            <Button Content="Отмена" Width="100" IsCancel="True" Command="{Binding CancelCommand}"
+                Background="#444" Foreground="#FFF" />
+        </StackPanel>
+    </StackPanel>
+</Window> 

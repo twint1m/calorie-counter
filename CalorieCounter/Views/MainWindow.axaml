@@ -1,0 +1,100 @@
+<Window xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:CalorieCounter.ViewModels"
+    x:Class="CalorieCounter.Views.MainWindow"
+    x:DataType="vm:MainWindowViewModel"
+    Title="Calorie Counter" MinWidth="360" MinHeight="500" Width="600" Height="700"
+    Background="#181A20">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at
+        App.axaml.cs) -->
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <StackPanel Margin="16" Spacing="14">
+        <TextBlock Text="Простой счетчик калорий" FontWeight="Bold" FontSize="22"
+            HorizontalAlignment="Center" Margin="0,0,0,8" Foreground="#FFF" />
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+            <Grid ColumnDefinitions="2.5*,1.2*,1.2*,1.2*,1.5*,auto" MinWidth="480" Margin="0,0,0,0">
+                <TextBox Grid.Column="0" Margin="2" Watermark="Название продукта"
+                    Text="{Binding ProductName, UpdateSourceTrigger=PropertyChanged}"
+                    Background="#23262F" Foreground="#FFF" />
+                <TextBox Grid.Column="1" Margin="2" Watermark="Ккал"
+                    Text="{Binding ProductCalories, UpdateSourceTrigger=PropertyChanged}"
+                    Background="#23262F" Foreground="#FFF" />
+                <TextBox Grid.Column="2" Margin="2" Watermark="Белки"
+                    Text="{Binding ProductProtein, UpdateSourceTrigger=PropertyChanged}"
+                    Background="#23262F" Foreground="#FFF" />
+                <TextBox Grid.Column="3" Margin="2" Watermark="Жиры"
+                    Text="{Binding ProductFat, UpdateSourceTrigger=PropertyChanged}"
+                    Background="#23262F" Foreground="#FFF" />
+                <TextBox Grid.Column="4" Margin="2" Watermark="Углеводы"
+                    Text="{Binding ProductCarbs, UpdateSourceTrigger=PropertyChanged}"
+                    Background="#23262F" Foreground="#FFF" />
+                <Button Grid.Column="5" Margin="2" Content="Добавить"
+                    Command="{Binding AddProductCommand}" Background="#4F8EF7"
+                    Foreground="#FFF" Padding="16,0" MinWidth="80" />
+            </Grid>
+        </ScrollViewer>
+        <!-- Заголовки таблицы -->
+        <Border Background="#23262F" CornerRadius="8" Margin="0,12,0,0">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                VerticalScrollBarVisibility="Disabled">
+                <Grid ColumnDefinitions="2.5*,1.2*,1.2*,1.2*,1.5*" MinWidth="480">
+                    <TextBlock Grid.Column="0" Text="Название" FontWeight="Bold"
+                        Foreground="#E0E0E0" />
+                    <TextBlock Grid.Column="1" Text="Ккал" FontWeight="Bold" Foreground="#E0E0E0" />
+                    <TextBlock Grid.Column="2" Text="Белки" FontWeight="Bold" Foreground="#E0E0E0" />
+                    <TextBlock Grid.Column="3" Text="Жиры" FontWeight="Bold" Foreground="#E0E0E0" />
+                    <TextBlock Grid.Column="4" Text="Углеводы" FontWeight="Bold"
+                        Foreground="#E0E0E0" />
+                </Grid>
+            </ScrollViewer>
+        </Border>
+        <Border Background="#23262F" CornerRadius="12" BoxShadow="2 2 12 0 #111" Margin="0,0,0,0">
+            <ScrollViewer Height="340" HorizontalScrollBarVisibility="Auto">
+                <ItemsControl ItemsSource="{Binding Products}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ColumnDefinitions="2.5*,1.2*,1.2*,1.2*,1.5*" MinWidth="480"
+                                Margin="8,2">
+                                <TextBlock Grid.Column="0" Text="{Binding Name}" Foreground="#FFF" />
+                                <TextBlock Grid.Column="1" Text="{Binding Calories}"
+                                    Foreground="#FFF" />
+                                <TextBlock Grid.Column="2" Text="{Binding Protein}"
+                                    Foreground="#FFF" />
+                                <TextBlock Grid.Column="3" Text="{Binding Fat}" Foreground="#FFF" />
+                                <TextBlock Grid.Column="4" Text="{Binding Carbs}" Foreground="#FFF" />
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Border>
+        <Border Background="#23262F" CornerRadius="12" Padding="14,10" Margin="0,12,0,0"
+            BoxShadow="2 2 12 0 #111">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                VerticalScrollBarVisibility="Disabled">
+                <Grid ColumnDefinitions="auto,auto,auto,auto,auto" MinWidth="480"
+                    HorizontalAlignment="Center">
+                    <TextBlock Grid.Column="0" Text="Итого:" FontWeight="Bold" FontSize="16"
+                        Foreground="#FFF" Margin="0,0,12,0" />
+                    <TextBlock Grid.Column="1"
+                        Text="{Binding TotalCalories, StringFormat=' {0} ккал'}"
+                        FontWeight="Bold" FontSize="16" Foreground="#4F8EF7" Margin="0,0,12,0" />
+                    <TextBlock Grid.Column="2"
+                        Text="{Binding TotalProtein, StringFormat='Белки: {0}'}"
+                        FontWeight="Bold" FontSize="16" Foreground="#4F8EF7" Margin="0,0,12,0" />
+                    <TextBlock Grid.Column="3" Text="{Binding TotalFat, StringFormat='Жиры: {0}'}"
+                        FontWeight="Bold" FontSize="16" Foreground="#4F8EF7" Margin="0,0,12,0" />
+                    <TextBlock Grid.Column="4"
+                        Text="{Binding TotalCarbs, StringFormat='Углеводы: {0}'}"
+                        FontWeight="Bold" FontSize="16" Foreground="#4F8EF7" />
+                </Grid>
+            </ScrollViewer>
+        </Border>
+    </StackPanel>
+
+</Window>
