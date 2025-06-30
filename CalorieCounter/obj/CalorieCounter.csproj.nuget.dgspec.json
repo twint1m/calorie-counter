@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/timurshorahanov/Desktop/CalorieCounter/CalorieCounter/CalorieCounter.csproj": {}
+    "/Users/timurshorahanov/Desktop/calorie-counter/CalorieCounter/CalorieCounter.csproj": {}
   },
   "projects": {
-    "/Users/timurshorahanov/Desktop/CalorieCounter/CalorieCounter/CalorieCounter.csproj": {
+    "/Users/timurshorahanov/Desktop/calorie-counter/CalorieCounter/CalorieCounter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/timurshorahanov/Desktop/CalorieCounter/CalorieCounter/CalorieCounter.csproj",
+        "projectUniqueName": "/Users/timurshorahanov/Desktop/calorie-counter/CalorieCounter/CalorieCounter.csproj",
         "projectName": "CalorieCounter",
-        "projectPath": "/Users/timurshorahanov/Desktop/CalorieCounter/CalorieCounter/CalorieCounter.csproj",
+        "projectPath": "/Users/timurshorahanov/Desktop/calorie-counter/CalorieCounter/CalorieCounter.csproj",
         "packagesPath": "/Users/timurshorahanov/.nuget/packages/",
-        "outputPath": "/Users/timurshorahanov/Desktop/CalorieCounter/CalorieCounter/obj/",
+        "outputPath": "/Users/timurshorahanov/Desktop/calorie-counter/CalorieCounter/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/timurshorahanov/.nuget/NuGet/NuGet.Config"

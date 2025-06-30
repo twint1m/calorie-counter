@@ -20,17 +20,17 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CalorieCounter
-build_property.ProjectDir = /Users/timurshorahanov/Desktop/CalorieCounter/CalorieCounter/
+build_property.ProjectDir = /Users/timurshorahanov/Desktop/calorie-counter/CalorieCounter/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[/Users/timurshorahanov/Desktop/CalorieCounter/CalorieCounter/App.axaml]
+[/Users/timurshorahanov/Desktop/calorie-counter/CalorieCounter/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/timurshorahanov/Desktop/CalorieCounter/CalorieCounter/Views/EditProductWindow.axaml]
+[/Users/timurshorahanov/Desktop/calorie-counter/CalorieCounter/Views/EditProductWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/timurshorahanov/Desktop/CalorieCounter/CalorieCounter/Views/MainWindow.axaml]
+[/Users/timurshorahanov/Desktop/calorie-counter/CalorieCounter/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
