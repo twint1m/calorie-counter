@@ -157,7 +157,8 @@
                             <StackPanel Orientation="Horizontal" Spacing="8">
                                 <TextBlock Text="{Binding Name}" FontWeight="Bold"
                                     Foreground="#4F8EF7" />
-                                <TextBlock Text="({Binding Foods.Count} продуктов)"
+                                <TextBlock
+                                    Text="{Binding Foods.Count, StringFormat='({0} продуктов)'}"
                                     Foreground="#FFF" />
                             </StackPanel>
                         </DataTemplate>
