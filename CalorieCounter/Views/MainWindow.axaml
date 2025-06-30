@@ -102,6 +102,72 @@
                 </Grid>
             </ScrollViewer>
         </Border>
+        <!-- Создание нового шаблона приёма пищи -->
+        <Border Background="#23262F" CornerRadius="8" Margin="0,0,0,8" Padding="8">
+            <StackPanel Spacing="6">
+                <TextBlock Text="Создать приём пищи (шаблон):" FontWeight="Bold" Foreground="#FFF" />
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <TextBox Width="160" Watermark="Название приёма"
+                        Text="{Binding NewMealName, UpdateSourceTrigger=PropertyChanged}"
+                        Background="#23262F" Foreground="#FFF" />
+                    <Button Content="Сохранить шаблон" Command="{Binding AddMealTemplateCommand}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Spacing="4">
+                    <TextBox Width="120" Watermark="Продукт"
+                        Text="{Binding ProductName, UpdateSourceTrigger=PropertyChanged}"
+                        Background="#23262F" Foreground="#FFF" />
+                    <TextBox Width="60" Watermark="Ккал"
+                        Text="{Binding ProductCalories, UpdateSourceTrigger=PropertyChanged}"
+                        Background="#23262F" Foreground="#FFF" />
+                    <TextBox Width="60" Watermark="Белки"
+                        Text="{Binding ProductProtein, UpdateSourceTrigger=PropertyChanged}"
+                        Background="#23262F" Foreground="#FFF" />
+                    <TextBox Width="60" Watermark="Жиры"
+                        Text="{Binding ProductFat, UpdateSourceTrigger=PropertyChanged}"
+                        Background="#23262F" Foreground="#FFF" />
+                    <TextBox Width="80" Watermark="Углеводы"
+                        Text="{Binding ProductCarbs, UpdateSourceTrigger=PropertyChanged}"
+                        Background="#23262F" Foreground="#FFF" />
+                    <Button Content="Добавить продукт" Command="{Binding AddFoodToNewMealCommand}" />
+                </StackPanel>
+                <ItemsControl ItemsSource="{Binding NewMealFoods}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <TextBlock Text="{Binding Name}" Foreground="#FFF" />
+                                <TextBlock Text="{Binding Calories}" Foreground="#FFF" />
+                                <TextBlock Text="{Binding Protein}" Foreground="#FFF" />
+                                <TextBlock Text="{Binding Fat}" Foreground="#FFF" />
+                                <TextBlock Text="{Binding Carbs}" Foreground="#FFF" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </Border>
+
+        <!-- Список шаблонов приёмов пищи -->
+        <Border Background="#23262F" CornerRadius="8" Margin="0,0,0,8" Padding="8">
+            <StackPanel Spacing="6">
+                <TextBlock Text="Шаблоны приёмов пищи:" FontWeight="Bold" Foreground="#FFF" />
+                <ListBox ItemsSource="{Binding MealTemplates}"
+                    SelectedItem="{Binding SelectedMealTemplate, Mode=TwoWay}" Height="80">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <TextBlock Text="{Binding Name}" FontWeight="Bold"
+                                    Foreground="#4F8EF7" />
+                                <TextBlock Text="({Binding Foods.Count} продуктов)"
+                                    Foreground="#FFF" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Button Content="Добавить выбранный приём в день"
+                    Command="{Binding AddMealTemplateToDayCommand}"
+                    IsEnabled="{Binding SelectedMealTemplate}" />
+            </StackPanel>
+        </Border>
     </StackPanel>
 
 </Window>
